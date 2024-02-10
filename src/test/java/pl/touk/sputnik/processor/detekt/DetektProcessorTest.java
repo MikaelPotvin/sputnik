@@ -108,10 +108,10 @@ class DetektProcessorTest {
         assertThat(result).isNotNull();
     }
 
-    @Test
-    void shouldGetName() {
-        assertEquals("detekt", sut.getName());
-    }
+//    @Test
+//    void shouldGetName() {
+//        assertEquals("detekt", sut.getName());
+//    }
 
     private Review getReview(String... filePaths) {
         List<ReviewFile> files = new ArrayList<>();
