@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DetektProcessorTest {
     private static final String CONFIGURATION_WITH_KTLINT_ENABLED_AND_WITH_DETEKT_CONFIG_FILE = "detekt/configuration/configurationWithEnabledDetektAndDetektConfigFile.properties";
@@ -105,6 +106,11 @@ class DetektProcessorTest {
         ReviewResult result = detektProcessor.process(review);
 
         assertThat(result).isNotNull();
+    }
+
+    @Test
+    void shouldGetName() {
+        assertEquals("detekt", sut.getName());
     }
 
     private Review getReview(String... filePaths) {
